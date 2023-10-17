@@ -1,0 +1,24 @@
+.main {
+  width: 100%;
+  max-width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.content,
+.username {
+  color: var(--rgb-purple);
+  text-align: center;
+  font-weight: 700;
+}
+
+.content {
+  font-size: 16px;
+}
+
+.username {
+  font-size: 18px;
+}

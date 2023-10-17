@@ -1,0 +1,22 @@
+.main {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  height: fit-content;
+  padding: 4px 16px;
+  border-radius: 100px;
+  background-color: var(--background-rgb-rev);
+  z-index: 10;
+}
+
+.main {
+  color: var(--foreground-rgb-rev);
+  text-align: center;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.main:disabled {
+  background-color: #eaecf6;
+  color: #acb1c8;
+}
