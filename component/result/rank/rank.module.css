@@ -1,20 +1,24 @@
-.main {
-  background-color: var(--rgb-gray-bright);
-  border-radius: 10px;
+.background {
+  background-color: var(--rgb-gray-light);
   width: 100%;
-  max-width: 100%;
   height: fit-content;
-  padding: 35px 24px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15px;
+  margin-bottom: 29px;
+}
+.main {
+  width: fit-content;
+  height: fit-content;
+  padding: 20px 30px 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
 }
 
 .title {
-  color: var(--rgb-purple);
-  text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
 }
 
@@ -22,39 +26,40 @@
   width: 100%;
   max-width: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: flex-end;
-  justify-content: flex-start;
-}
-
-.item,
-.itemFirst {
-  display: flex;
   flex-direction: column;
-  gap: 10px;
-  height: fit-content;
-}
-
-.itemFirst {
-  width: 50%;
-  min-width: 50%;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 20px;
 }
 
 .item {
-  width: 25%;
-  min-width: 25%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
 }
 
 .itemImage {
   position: relative;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
 }
 
-.itemDescription {
-  color: var(--rgb-purple);
-  text-align: center;
-  font-size: 22px;
-  font-weight: 700;
+.itemBar {
+  max-width: 100%;
+  height: 25px;
+  background-color: var(--rgb-purple);
+  border-radius: 8px;
+}
+
+.itemNum {
+  width: 40px;
+  text-align: start;
+  flex-shrink: 0;
+  color: #818198;
+  font-size: 12px;
+  font-weight: 400;
 }

@@ -1,0 +1,19 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 38px;
+  margin-bottom: 16px;
+}
+
+.title {
+  margin-bottom: 9px;
+}
+
+.subtitle {
+  margin-bottom: 6px;
+}
+
+.description {
+  font-size: 10px;
+}

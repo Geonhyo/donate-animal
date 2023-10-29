@@ -3,16 +3,12 @@ import styles from "./title.module.css";
 export default function VoteTitle() {
   return (
     <div className={styles.main}>
-      <h1>
-        당신의 PICK을
+      <h1>댕냥이의 한판승부 🥊</h1>
+      <h2>
+        세상을 지배할 귀여움은 누구?
         <br />
-        선택해주세요!
-      </h1>
-      <p className={styles.description}>
-        1회 투표 비용은 0000원이며
-        <br />
-        유기동물 보호소에 전액 기부됩니다.
-      </p>
+        팀을 선택한 뒤 기부로 투표해주세요!
+      </h2>
     </div>
   );
 }

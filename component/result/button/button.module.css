@@ -1,0 +1,26 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 27px;
+}
+
+.description {
+  margin-bottom: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.descriptionTitle {
+  color: var(--rgb-purple);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.descriptionContent {
+  color: var(--rgb-gray);
+  font-size: 10px;
+}

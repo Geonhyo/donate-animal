@@ -3,8 +3,7 @@
   --background-rgb-rev: #303030;
   --foreground-rgb: #303030;
   --foreground-rgb-rev: #fff;
-  --rgb-gray-light: #e9ebf2;
-  --rgb-gray-bright: #f9f9fb;
+  --rgb-gray-light: #d9d9d9;
   --rgb-gray: #808080;
   --rgb-blue-light: #e7eafd;
   --rgb-purple: #626184;
@@ -26,6 +25,8 @@
   border: none;
   color: inherit;
   background-color: inherit;
+  outline: none;
+  resize: none;
 }
 
 html,
@@ -51,7 +52,9 @@ button {
 
 p,
 span,
-h1 {
+h1,
+h2 {
+  text-align: center;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -59,9 +62,12 @@ h1 {
 }
 
 h1 {
-  text-align: center;
-  font-size: 35px;
+  font-size: 22px;
   font-weight: 700;
+}
+
+h2 {
+  font-size: 15px;
 }
 
 @media (prefers-color-scheme: dark) {

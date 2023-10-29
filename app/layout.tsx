@@ -15,8 +15,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <>
+      <meta
+        name="viewport"
+        content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"
+      />
+      <html lang="en">
+        <body className={inter.className}>{children}</body>
+      </html>
+    </>
   );
 }

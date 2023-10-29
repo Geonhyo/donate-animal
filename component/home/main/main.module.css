@@ -1,41 +1,19 @@
 .main {
+  position: relative;
+  overflow: visible;
   width: 100%;
-  height: 100%;
+  height: 400px;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
   gap: 32px;
-}
-
-.title {
-  color: var(--foreground-rgb);
-  text-align: center;
-  font-size: 50px;
-  font-weight: 700;
-  z-index: 10;
-}
-
-.titleName {
-  background-color: var(--background-rgb-rev);
-  color: var(--foreground-rgb-rev);
-  z-index: 10;
-}
-
-.description {
-  background-color: var(--rgb-gray-light);
-  text-align: center;
-  font-size: 20px;
-  padding: 4px 16px;
-  border-radius: 100px;
-  z-index: 10;
+  margin-top: 11px;
+  margin-bottom: 20px;
 }
 
 .images {
   display: block;
-  position: relative;
-  width: 100%;
-  height: 400px;
-  overflow: visible;
 }
 
 .imageDog,

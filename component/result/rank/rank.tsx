@@ -7,25 +7,34 @@ type Props = {
 };
 
 export default function ResultRank({ data }: Props) {
+  const mostVoteNum = data.find((e) => e.rank === 1)?.voteNum;
   return (
-    <div className={styles.main}>
-      <p className={styles.title}>[투표 현황]</p>
-      <ul className={styles.list}>
-        {data.map((rank) => (
-          <RankItem key={rank.id} rank={rank} />
-        ))}
-      </ul>
+    <div className={styles.background}>
+      <div className={styles.main}>
+        <p className={styles.title}>투표 현황</p>
+        <ul className={styles.list}>
+          {data.map((rank) => (
+            <RankItem
+              key={rank.id}
+              mostVoteNum={mostVoteNum ?? rank.voteNum}
+              rank={rank}
+            />
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
 
 type ItemProps = {
+  mostVoteNum: number;
   rank: RankModel;
 };
 
-function RankItem({ rank }: ItemProps) {
+function RankItem({ mostVoteNum, rank }: ItemProps) {
+  const barWidth = (160 * rank.voteNum) / mostVoteNum;
   return (
-    <div className={rank.rank === 1 ? styles.itemFirst : styles.item}>
+    <div className={styles.item}>
       <div className={styles.itemImage}>
         <Image
           src={`/image/${rank.id}.png`}
@@ -35,10 +44,8 @@ function RankItem({ rank }: ItemProps) {
           sizes="m"
         />
       </div>
-      <p className={styles.itemDescription}>
-        {rank.rank === 1 && <span>현재&nbsp;</span>}
-        {rank.rank}위
-      </p>
+      <div style={{ width: `${10 + barWidth}px` }} className={styles.itemBar} />
+      <p className={styles.itemNum}>{rank.voteNum}표</p>
     </div>
   );
 }

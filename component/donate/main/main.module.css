@@ -1,0 +1,69 @@
+.main {
+  width: 100%;
+  max-width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 39px;
+}
+
+.linkMain,
+.accountMain {
+  background-color: var(--rgb-gray-light);
+  border-radius: 8px;
+  width: 225px;
+  max-width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.linkMain {
+  padding: 23px 20px 19px;
+}
+
+.accountMain {
+  padding: 18px 20px 14px;
+}
+
+.linkButton {
+  background-color: #ffeb00;
+  border-radius: 6px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: auto;
+  margin-bottom: 6px;
+}
+
+.linkButtonImage {
+  position: relative;
+  width: 99px;
+  height: 32px;
+}
+
+.linkDescription {
+  color: #c1c1c1;
+  font-size: 12px;
+  margin-bottom: 11px;
+}
+
+.linkContent {
+  font-size: 11px;
+}
+
+.accountNumber {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.accountContent {
+  font-size: 11px;
+}
