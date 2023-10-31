@@ -83,7 +83,7 @@ function PickItem({
           src={isSelected ? selectedSrc : defaultSrc}
           alt={title}
           fill
-          priority={false}
+          priority
           sizes="m"
         />
       </div>
