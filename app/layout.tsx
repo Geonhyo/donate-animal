@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Donate Animal",
-  description: "Pick and Donate to Save Animals",
+  title: "We Rule The World",
+  description: "Vote and Donate to Save Animals",
 };
 
 export default function RootLayout({
