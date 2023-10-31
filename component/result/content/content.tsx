@@ -7,7 +7,7 @@ import Link from "next/link";
 
 const instagramLink =
   "https://instagram.com/we.ruletheworld?igshid=MzMyNGUyNmU2YQ%3D%3D&utm_source=qr";
-const url = "localhost:3000";
+const url = "https://we-rule-the-world.vercel.app";
 
 export default function ResultContent() {
   const onClickCopyUrl = () => {
