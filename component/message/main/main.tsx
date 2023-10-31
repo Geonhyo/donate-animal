@@ -1,16 +1,22 @@
 "use client";
 import Image from "next/image";
 import styles from "./main.module.css";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useSearchParams, useRouter } from "next/navigation";
 import DogImage from "@/public/image/dog.png";
 import CatImage from "@/public/image/cat.png";
 import Button from "@/component/common/button/button";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { PostVoteRequestBody } from "@/app/api/vote/route";
 
 export default function MessageMain() {
-  const router = useRouter();
   const searchParams = useSearchParams();
   const animal = searchParams.get("animal");
+
+  useEffect(() => {
+    window.history.replaceState(null, "/", "/");
+  }, []);
+
+  const router = useRouter();
   const [message, setMessage] = useState("");
   const onChangeHandler = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     e.preventDefault();
@@ -18,17 +24,27 @@ export default function MessageMain() {
     setMessage(value);
   };
 
-  const onSubmitWithoutMessage = () => {
-    // Update VoteNum
-    const id = "sfasdfvv";
-    router.push(`/result?id=${id}`);
+  const onSubmitWithoutMessage = async () => {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API}/vote`, {
+      method: "POST",
+      cache: "no-cache",
+      body: JSON.stringify({ animal: animal } as PostVoteRequestBody),
+    });
+    const id = await response.json();
+    router.replace(`/result?id=${id}`);
   };
 
-  const onSubmitMessage = () => {
-    console.log(message);
-    // Upload Message and Update VoteNum
-    const id = "sdfsdfsd";
-    router.push(`/result?id=${id}`);
+  const onSubmitMessage = async () => {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_API}/vote`, {
+      method: "POST",
+      cache: "no-cache",
+      body: JSON.stringify({
+        animal: animal,
+        message: message,
+      } as PostVoteRequestBody),
+    });
+    const id = await response.json();
+    router.replace(`/result?id=${id}`);
   };
 
   return (

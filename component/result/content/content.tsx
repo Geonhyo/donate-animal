@@ -6,7 +6,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 const instagramLink = "https://www.naver.com";
-
 const url = "localhost:3000";
 
 export default function ResultContent() {

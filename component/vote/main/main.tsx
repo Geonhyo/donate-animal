@@ -2,11 +2,14 @@
 
 import Image from "next/image";
 import styles from "./main.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Button from "@/component/common/button/button";
 import Animal from "@/model/animal";
 
 export default function VoteMain() {
+  useEffect(() => {
+    window.history.replaceState(null, "/", "/");
+  }, []);
   const [selected, setSelected] = useState<Animal | null>(null);
   return (
     <>

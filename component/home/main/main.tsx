@@ -14,9 +14,9 @@ export default function HomeMain({ data }: Props) {
 
   useEffect(() => {
     const dogNum = data.find((e) => e.id === "dog")?.voteNum ?? 0;
-    const catNum = data.find((e) => e.id === "dog")?.voteNum ?? 0;
-    setCatImageWidth(`calc(100vw * ${catNum} / ${dogNum + catNum})`);
-    setDogImageWidth(`calc(100vw * ${dogNum} / ${dogNum + catNum})`);
+    const catNum = data.find((e) => e.id === "cat")?.voteNum ?? 0;
+    setCatImageWidth(`calc(30vw + 40vw * ${catNum} / ${dogNum + catNum})`);
+    setDogImageWidth(`calc(30vw + 40vw * ${dogNum} / ${dogNum + catNum})`);
   }, [data]);
 
   return (

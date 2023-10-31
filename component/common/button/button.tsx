@@ -6,6 +6,7 @@ type Props = {
   children: React.ReactNode;
   title: string;
   href?: string;
+  as?: string;
   disabled?: boolean;
   onClick?: () => void;
   style?: "solid" | "ghost";
@@ -17,6 +18,7 @@ export default function Button({
   children,
   title,
   href,
+  as,
   disabled = false,
   onClick,
   style = "solid",
@@ -37,6 +39,7 @@ export default function Button({
       replace={replace}
       onClick={onClick}
       href={href}
+      as={as}
       title={title}
       className={`${
         style === "solid" ? styles.solid : styles.ghost
