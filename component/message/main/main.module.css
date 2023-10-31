@@ -1,23 +1,40 @@
+.subtitle {
+  margin-bottom: 8px;
+}
+
+.description {
+  font-size: 11px;
+  color: var(--rgb-gray-dark);
+  margin-bottom: 24px;
+}
+
 .image {
   margin-bottom: 9px;
   position: relative;
-  width: 150px;
-  height: 150px;
+  width: 160px;
+  height: 160px;
 }
 
 .textareaBackground {
-  width: 225px;
-  height: 128px;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #ced0e7;
+  position: relative;
+  width: 200px;
+  height: 105px;
+}
+
+.textBox {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 16px 16px 26px;
 }
 
 .textarea {
+  background-color: transparent;
   width: 100%;
   height: 100%;
-  padding: 8px;
-  background-color: #eaecf6;
   font-size: 14px;
   overflow: scroll;
 }

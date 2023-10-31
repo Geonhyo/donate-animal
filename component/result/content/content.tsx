@@ -5,7 +5,8 @@ import UrlIcon from "@/public/icon/url.svg";
 import Image from "next/image";
 import Link from "next/link";
 
-const instagramLink = "https://www.naver.com";
+const instagramLink =
+  "https://instagram.com/we.ruletheworld?igshid=MzMyNGUyNmU2YQ%3D%3D&utm_source=qr";
 const url = "localhost:3000";
 
 export default function ResultContent() {

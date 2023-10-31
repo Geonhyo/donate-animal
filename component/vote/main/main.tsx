@@ -5,32 +5,41 @@ import styles from "./main.module.css";
 import { useEffect, useState } from "react";
 import Button from "@/component/common/button/button";
 import Animal from "@/model/animal";
+import DogImage from "@/public/image/dog.svg";
+import DogSelectedImage from "@/public/image/dog_selected.svg";
+import CatImage from "@/public/image/cat.svg";
+import CatSelectedImage from "@/public/image/cat_selected.svg";
+import ElseImage from "@/public/image/else.svg";
+import ElseSelectedImage from "@/public/image/else_selected.svg";
 
 export default function VoteMain() {
   useEffect(() => {
-    window.history.replaceState(null, "/", "/");
+    window.history.replaceState({ ...window.history.state }, "/", "/");
   }, []);
   const [selected, setSelected] = useState<Animal | null>(null);
   return (
     <>
       <PickItem
         title="TEAM 댕댕"
-        src="/image/dog.png"
-        description="TEAM 댕댕"
+        defaultSrc={DogImage}
+        selectedSrc={DogSelectedImage}
+        label="TEAM 댕댕"
         onClick={() => setSelected("dog")}
         isSelected={selected === "dog"}
       />
       <PickItem
         title="TEAM 냥냥"
-        src="/image/cat.png"
-        description="TEAM 냥냥"
+        defaultSrc={CatImage}
+        selectedSrc={CatSelectedImage}
+        label="TEAM 냥냥"
         onClick={() => setSelected("cat")}
         isSelected={selected === "cat"}
       />
       <PickItem
         title="이기는 팀 우리팀 🕶️🍿"
-        src="/image/else.png"
-        description="이기는 팀 우리팀 🕶️🍿"
+        defaultSrc={ElseImage}
+        selectedSrc={ElseSelectedImage}
+        label="이기는 팀 우리팀 🕶️🍿"
         onClick={() => setSelected("else")}
         isSelected={selected === "else"}
       />
@@ -48,13 +57,21 @@ export default function VoteMain() {
 
 type ItemProps = {
   title: string;
-  src: string;
-  description: string;
+  defaultSrc: string;
+  selectedSrc: string;
+  label: string;
   onClick: () => void;
   isSelected: boolean;
 };
 
-function PickItem({ title, src, description, onClick, isSelected }: ItemProps) {
+function PickItem({
+  title,
+  defaultSrc,
+  selectedSrc,
+  label,
+  onClick,
+  isSelected,
+}: ItemProps) {
   const onClickHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     onClick();
@@ -62,10 +79,15 @@ function PickItem({ title, src, description, onClick, isSelected }: ItemProps) {
   return (
     <button title={title} onClick={onClickHandler} className={styles.item}>
       <div className={styles.itemImage}>
-        {isSelected && <div className={styles.itemImageCover} />}
-        <Image src={src} alt={title} fill priority sizes="m" />
+        <Image
+          src={isSelected ? selectedSrc : defaultSrc}
+          alt={title}
+          fill
+          priority={false}
+          sizes="m"
+        />
       </div>
-      <p className={styles.itemDescription}>{description}</p>
+      <p className={styles.itemLabel}>{label}</p>
     </button>
   );
 }

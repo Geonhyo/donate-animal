@@ -1,9 +1,10 @@
 .main {
   position: relative;
   overflow: visible;
-  width: 100%;
-  height: 400px;
-  min-height: 400px;
+  width: 300px;
+  max-width: calc(100vw - 20px);
+  height: 280px;
+  min-height: 280px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -15,6 +16,7 @@
 
 .images {
   display: block;
+  max-width: 210px;
 }
 
 .imageDog,
@@ -22,16 +24,18 @@
   position: absolute;
   height: auto;
   aspect-ratio: 1;
+  flex-shrink: 0;
 }
 
 .imageDog {
   top: 0;
   left: 0;
-  transform: rotate(-15deg);
+  transform: translateX(7px) rotate(-7.5deg) translateY(10px);
 }
 
 .imageCat {
   bottom: 0;
   right: 0;
-  transform: rotate(15deg);
+  transform: rotate(7.5deg);
+  transform: translateX(-12px) rotate(7.5deg) translateY(-10px);
 }

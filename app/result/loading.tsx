@@ -1,3 +1,5 @@
+import styles from "./loading.module.css";
+
 export default function Loading() {
-  return <div>결과 기다리는 중...</div>;
+  return <div className={styles.background}>결과 기다리는 중...</div>;
 }

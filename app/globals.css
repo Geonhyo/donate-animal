@@ -3,10 +3,21 @@
   --background-rgb-rev: #303030;
   --foreground-rgb: #303030;
   --foreground-rgb-rev: #fff;
-  --rgb-gray-light: #d9d9d9;
-  --rgb-gray: #808080;
+  --rgb-gray-light: #f9f9f9;
+  --rgb-gray: #cfcfcf;
+  --rgb-gray-dark: #909090;
   --rgb-blue-light: #e7eafd;
   --rgb-purple: #626184;
+  --primary-green: #62c4b2;
+  --secondary-green: #78d2c1;
+  --primary-yello: #ffd082;
+  --bg-gradient: linear-gradient(
+    154.26deg,
+    #62c4b2 0.71%,
+    #82d9c9 28.62%,
+    #a3efe0 96.41%,
+    #98e7d8 96.41%
+  );
 }
 
 @media (prefers-color-scheme: dark) {

@@ -1,18 +1,30 @@
+"use client";
+import Image from "next/image";
 import styles from "./title.module.css";
+import { useRouter } from "next/navigation";
+import BackIcon from "@/public/icon/back.svg";
 
 export default function MessageTitle() {
+  const router = useRouter();
+  const onClickBack = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    router.back();
+  };
   return (
     <div className={styles.main}>
-      <h1 className={styles.title}>응원의 한 마디 💌</h1>
-      <h2 className={styles.subtitle}>
-        우리팀을 응원해주세요!
-        <br />
-        전시장에서 내 응원을 확인할 수 있어요.
-        <br />
-        <span className={styles.description}>
-          (투표 완료 후 전시 화면을 확인해주세요!)
-        </span>
-      </h2>
+      <div className={styles.header}>
+        <button onClick={onClickBack} className={styles.back}>
+          <Image
+            src={BackIcon}
+            alt="뒤로가기"
+            priority={false}
+            fill
+            sizes="s"
+          />
+        </button>
+        <h1 className={styles.title}>응원의 한 마디 💌</h1>
+        <div className={styles.back} />
+      </div>
     </div>
   );
 }

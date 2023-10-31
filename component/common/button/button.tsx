@@ -6,11 +6,9 @@ type Props = {
   children: React.ReactNode;
   title: string;
   href?: string;
-  as?: string;
   disabled?: boolean;
   onClick?: () => void;
-  style?: "solid" | "ghost";
-  replace?: boolean;
+  style?: "solid" | "ghost" | "white";
 };
 
 export default function Button({
@@ -18,32 +16,30 @@ export default function Button({
   children,
   title,
   href,
-  as,
   disabled = false,
   onClick,
   style = "solid",
-  replace = true,
 }: Props) {
+  const getStyle = () => {
+    switch (style) {
+      case "solid":
+        return styles.solid;
+      case "ghost":
+        return styles.ghost;
+      case "white":
+        return styles.white;
+    }
+  };
   return disabled ? (
-    <button
-      disabled
-      className={`${
-        style === "solid" ? styles.solid : styles.ghost
-      } ${className}`}
-      title={title}
-    >
+    <button disabled className={`${getStyle()} ${className}`} title={title}>
       {children}
     </button>
   ) : href ? (
     <Link
-      replace={replace}
       onClick={onClick}
       href={href}
-      as={as}
       title={title}
-      className={`${
-        style === "solid" ? styles.solid : styles.ghost
-      } ${className}`}
+      className={`${getStyle()} ${className}`}
     >
       {children}
     </Link>

@@ -10,6 +10,8 @@ export default function HomeTitle() {
         alt="댕냥이의 기부배틀"
         title="댕냥이의 기부배틀"
         fill
+        priority
+        sizes="l"
       />
     </div>
   );

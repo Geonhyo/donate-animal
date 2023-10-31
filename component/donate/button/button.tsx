@@ -10,7 +10,7 @@ export default function DonateButton() {
   const searchParams = useSearchParams();
   const animal = searchParams.get("animal");
   useEffect(() => {
-    window.history.replaceState(null, "/", "/");
+    window.history.replaceState({ ...window.history.state }, "/", "/");
   }, []);
   const router = useRouter();
   const isElse = animal === "else";
@@ -22,9 +22,9 @@ export default function DonateButton() {
         body: JSON.stringify({ animal: animal } as PostVoteRequestBody),
       });
       const id = await response.json();
-      router.replace(`/result?id=${id}`);
+      router.push(`/result?id=${id}`);
     } else {
-      router.replace(`/message?animal=${animal}`);
+      router.push(`/message?animal=${animal}`);
     }
   };
   return (

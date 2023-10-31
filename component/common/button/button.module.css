@@ -1,36 +1,34 @@
 .solid,
-.ghost {
-  width: 225px;
+.ghost,
+.white {
+  width: 280px;
   height: 40px;
-  max-width: 100%;
+  max-width: calc(100vw - 20px);
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   border-radius: 8px;
   z-index: 10;
-  text-align: center;
   font-size: 16px;
-  line-height: normal;
   font-weight: 700;
 }
 
 .solid {
-  background-color: var(--background-rgb-rev);
+  background-color: var(--primary-green);
   color: var(--foreground-rgb-rev);
 }
 
 .ghost {
-  border: 2px solid var(--foreground-rgb);
-  color: var(--foreground-rgb);
+  border: 2px solid var(--rgb-gray);
+  color: var(--rgb-gray);
 }
 
-.ghost:disabled {
-  border: 2px solid var(--rgb-gray-light);
-  color: var(--rgb-gray-light);
+.white {
+  background-color: var(--background-rgb);
 }
 
 .solid:disabled {
-  background-color: var(--rgb-gray-light);
+  background-color: var(--rgb-gray);
   color: var(--foreground-rgb-rev);
 }

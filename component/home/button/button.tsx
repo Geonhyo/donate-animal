@@ -4,12 +4,12 @@ import styles from "./button.module.css";
 export default function HomeButton() {
   return (
     <Button
-      replace={false}
       className={styles.main}
+      style="white"
       href="/vote"
-      title="누구에게 투표하시겠습니까?"
+      title="누구를 응원하시겠습니까?"
     >
-      누구에게 투표하시겠습니까?
+      누구를 응원하시겠습니까?
     </Button>
   );
 }

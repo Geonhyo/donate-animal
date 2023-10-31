@@ -78,7 +78,7 @@ export async function GET(request: NextRequest) {
     updateDoc(doc(db, "votes", voteSnap.id), { read: true });
   }
 
-  rankList.sort((a, b) => a.voteNum - b.voteNum);
+  rankList.sort((a, b) => b.voteNum - a.voteNum);
   rankList[0].rank = 1;
   rankList[1].rank = 2;
   rankList[2].rank = 3;

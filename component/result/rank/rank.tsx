@@ -1,6 +1,10 @@
 import { RankModel } from "@/model/rank";
 import styles from "./rank.module.css";
 import Image from "next/image";
+import ResultTitleImage from "@/public/image/result_title.svg";
+import DogImage from "@/public/image/dog.svg";
+import CatImage from "@/public/image/cat.svg";
+import ElseImage from "@/public/image/else.svg";
 
 type Props = {
   data: RankModel[];
@@ -11,7 +15,15 @@ export default function ResultRank({ data }: Props) {
   return (
     <div className={styles.background}>
       <div className={styles.main}>
-        <p className={styles.title}>투표 현황</p>
+        <p className={styles.title}>
+          <Image
+            src={ResultTitleImage}
+            alt="응원 현황"
+            fill
+            priority={false}
+            sizes="m"
+          />
+        </p>
         <ul className={styles.list}>
           {data.map((rank) => (
             <RankItem
@@ -32,20 +44,38 @@ type ItemProps = {
 };
 
 function RankItem({ mostVoteNum, rank }: ItemProps) {
-  const barWidth = (160 * rank.voteNum) / mostVoteNum;
+  const barWidth = (170 * rank.voteNum) / mostVoteNum;
+  const getSvg = () => {
+    switch (rank.id) {
+      case "dog":
+        return DogImage;
+      case "cat":
+        return CatImage;
+      default:
+        return ElseImage;
+    }
+  };
+
+  const getBgColor = () => {
+    switch (rank.rank) {
+      case 1:
+        return "var(--primary-green)";
+      case 2:
+        return "var(--secondary-green)";
+      default:
+        return "var(--rgb-gray)";
+    }
+  };
   return (
     <div className={styles.item}>
       <div className={styles.itemImage}>
-        <Image
-          src={`/image/${rank.id}.png`}
-          alt={rank.id}
-          fill
-          priority
-          sizes="m"
-        />
+        <Image src={getSvg()} alt={rank.id} fill priority sizes="m" />
       </div>
-      <div style={{ width: `${10 + barWidth}px` }} className={styles.itemBar} />
-      <p className={styles.itemNum}>{rank.voteNum}표</p>
+      <div
+        style={{ width: `${30 + barWidth}px`, backgroundColor: getBgColor() }}
+        className={styles.itemBar}
+      />
+      <p className={styles.itemNum}>{rank.voteNum}♡</p>
     </div>
   );
 }

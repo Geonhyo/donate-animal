@@ -2,18 +2,20 @@
 import Image from "next/image";
 import styles from "./main.module.css";
 import { useSearchParams, useRouter } from "next/navigation";
-import DogImage from "@/public/image/dog.png";
-import CatImage from "@/public/image/cat.png";
-import Button from "@/component/common/button/button";
 import { useEffect, useState } from "react";
+import Button from "@/component/common/button/button";
 import { PostVoteRequestBody } from "@/app/api/vote/route";
+import DogImage from "@/public/image/dog.svg";
+import CatImage from "@/public/image/cat.svg";
+import BubbleLeftImage from "@/public/image/bubble_left.svg";
+import BubbleRightImage from "@/public/image/bubble_right.svg";
 
 export default function MessageMain() {
   const searchParams = useSearchParams();
   const animal = searchParams.get("animal");
 
   useEffect(() => {
-    window.history.replaceState(null, "/", "/");
+    window.history.replaceState({ ...window.history.state }, "/", "/");
   }, []);
 
   const router = useRouter();
@@ -31,7 +33,7 @@ export default function MessageMain() {
       body: JSON.stringify({ animal: animal } as PostVoteRequestBody),
     });
     const id = await response.json();
-    router.replace(`/result?id=${id}`);
+    router.push(`/result?id=${id}`);
   };
 
   const onSubmitMessage = async () => {
@@ -44,11 +46,21 @@ export default function MessageMain() {
       } as PostVoteRequestBody),
     });
     const id = await response.json();
-    router.replace(`/result?id=${id}`);
+    router.push(`/result?id=${id}`);
   };
 
   return (
     <>
+      <h2 className={styles.subtitle}>
+        <span>{animal === "dog" ? "댕댕이" : "냥냥이"}</span>를 위한 한 마디를
+        남겨주세요!
+        <br />
+        전시장에서 내 응원을 확인할 수 있어요.
+        <br />
+        <span className={styles.description}>
+          (응원 완료 후 전시 화면을 확인해 주세요!)
+        </span>
+      </h2>
       <div className={styles.image}>
         <Image
           src={animal === "dog" ? DogImage : CatImage}
@@ -59,11 +71,20 @@ export default function MessageMain() {
         />
       </div>
       <div className={styles.textareaBackground}>
-        <textarea
-          className={styles.textarea}
-          onChange={onChangeHandler}
-          value={message}
+        <Image
+          src={animal === "dog" ? BubbleLeftImage : BubbleRightImage}
+          alt=""
+          fill
+          priority
+          sizes="m"
         />
+        <div className={styles.textBox}>
+          <textarea
+            className={styles.textarea}
+            onChange={onChangeHandler}
+            value={message}
+          />
+        </div>
       </div>
       <div className={styles.button}>
         <Button

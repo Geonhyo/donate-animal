@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 export default function ResultButton() {
   useEffect(() => {
-    window.history.replaceState(null, "", "/result");
+    window.history.replaceState({ ...window.history.state }, "", "/result");
   }, []);
   const router = useRouter();
   return (

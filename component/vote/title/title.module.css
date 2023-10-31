@@ -5,3 +5,21 @@
   gap: 9px;
   margin-top: 38px;
 }
+
+.header {
+  width: 280px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  color: var(--secondary-green);
+}
+
+.back {
+  position: relative;
+  width: 10px;
+  height: 20px;
+}
