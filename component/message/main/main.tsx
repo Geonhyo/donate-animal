@@ -33,7 +33,7 @@ export default function MessageMain() {
       body: JSON.stringify({ animal: animal } as PostVoteRequestBody),
     });
     const id = await response.json();
-    router.push(`/result?id=${id}`);
+    router.replace(`/result?id=${id}`);
   };
 
   const onSubmitMessage = async () => {
@@ -46,7 +46,7 @@ export default function MessageMain() {
       } as PostVoteRequestBody),
     });
     const id = await response.json();
-    router.push(`/result?id=${id}`);
+    router.replace(`/result?id=${id}`);
   };
 
   return (

@@ -10,11 +10,7 @@ export default function ResultButton() {
   }, []);
   const router = useRouter();
   return (
-    <Button
-      className={styles.button}
-      title="첫 화면으로 돌아가기"
-      onClick={router.back}
-    >
+    <Button className={styles.button} title="첫 화면으로 돌아가기" href="/">
       ⌂ 첫 화면으로 돌아가기
     </Button>
   );

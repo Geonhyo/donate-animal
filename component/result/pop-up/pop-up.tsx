@@ -1,8 +1,8 @@
 "use client";
 import Image from "next/image";
 import styles from "./pop-up.module.css";
-import { useCallback, useEffect, useState } from "react";
-import VoteIcon from "@/public/icon/vote.svg";
+import { useEffect, useState } from "react";
+import VotePlusImage from "@/public/image/vote_plus.svg";
 
 function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms));
@@ -17,6 +17,7 @@ export default function ResultPopUp() {
   };
 
   useEffect(() => {
+    window.history.replaceState({ ...window.history.state }, "/", "/result");
     removePopUp();
   }, []);
 
@@ -28,10 +29,7 @@ export default function ResultPopUp() {
     on && (
       <div className={styles.background} onClick={onClickBackground}>
         <div className={styles.main}>
-          <div className={styles.icon}>
-            <Image src={VoteIcon} alt="투표완료" fill priority sizes="l" />
-          </div>
-          <p className={styles.num}>+1</p>
+          <Image src={VotePlusImage} alt="투표완료" fill priority sizes="l" />
         </div>
       </div>
     )

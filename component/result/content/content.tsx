@@ -10,8 +10,8 @@ const instagramLink =
 const url = "https://we-rule-the-world.vercel.app";
 
 export default function ResultContent() {
-  const onClickCopyUrl = () => {
-    navigator.clipboard.writeText(url);
+  const onClickCopyUrl = async () => {
+    await navigator.clipboard.writeText(url);
     alert("URL이 복사되었습니다");
   };
 

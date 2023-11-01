@@ -2,18 +2,13 @@
 import Image from "next/image";
 import styles from "./title.module.css";
 import BackIcon from "@/public/icon/back.svg";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function VoteTitle() {
-  const router = useRouter();
-  const onClickBack = (e: React.MouseEvent<HTMLButtonElement>) => {
-    e.preventDefault();
-    router.back();
-  };
   return (
     <div className={styles.main}>
       <div className={styles.header}>
-        <button onClick={onClickBack} className={styles.back}>
+        <Link href={"/"} replace className={styles.back}>
           <Image
             src={BackIcon}
             alt="뒤로가기"
@@ -21,7 +16,7 @@ export default function VoteTitle() {
             fill
             sizes="s"
           />
-        </button>
+        </Link>
         <h1 className={styles.title}>댕냥이의 기부배틀 🥊</h1>
         <div className={styles.back} />
       </div>

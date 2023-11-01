@@ -29,7 +29,7 @@ export default function HomeMain({ data }: Props) {
           width: dogImageWidth,
         }}
       >
-        <Image src={DogImage} alt="강아지" fill priority sizes="l" />
+        <Image src={DogImage} alt="강아지" fill priority sizes="m" />
       </div>
       <div
         className={styles.imageCat}
@@ -37,7 +37,10 @@ export default function HomeMain({ data }: Props) {
           width: catImageWidth,
         }}
       >
-        <Image src={CatImage} alt="고양이" fill priority sizes="l" />
+        <Image src={CatImage} alt="고양이" fill priority sizes="m" />
+      </div>
+      <div className={styles.imageVs}>
+        <Image src={"/image/vs.png"} alt="vs" fill priority sizes="m" />
       </div>
     </div>
   );

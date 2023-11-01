@@ -36,6 +36,7 @@ export default function Button({
     </button>
   ) : href ? (
     <Link
+      replace
       onClick={onClick}
       href={href}
       title={title}

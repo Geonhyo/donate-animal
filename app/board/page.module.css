@@ -1,20 +1,19 @@
-.background {
-  z-index: 10;
-  position: fixed;
+.main {
+  position: absolute;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(48, 48, 48, 0.6);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.main {
+.mainTitle {
+  top: 70px;
+  margin: 0 auto;
   position: relative;
-  width: 75px;
-  height: 60px;
-  background-color: transparent;
+  width: 215px;
+  height: 169px;
 }

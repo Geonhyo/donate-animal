@@ -31,6 +31,7 @@
   top: 0;
   left: 0;
   transform: translateX(7px) rotate(-7.5deg) translateY(10px);
+  z-index: 10;
 }
 
 .imageCat {
@@ -38,4 +39,15 @@
   right: 0;
   transform: rotate(7.5deg);
   transform: translateX(-12px) rotate(7.5deg) translateY(-10px);
+  z-index: 20;
+}
+
+.imageVs {
+  position: absolute;
+  width: 208px;
+  height: 208px;
+  margin: auto;
+  /* transform: translateX(50%) translateY(-50%); */
+  z-index: 15;
+  background-color: transparent;
 }
