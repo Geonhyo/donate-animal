@@ -1,13 +1,18 @@
 .main {
   width: 100vw;
   height: 100vh;
-  height: -webkit-fill-available;
-  height: fill-available;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 8px;
+}
+
+@media (max-width: 568px) {
+  .main {
+    height: -webkit-fill-available;
+    height: fill-available;
+  }
 }
 
 .input {

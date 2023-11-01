@@ -3,8 +3,9 @@ import { useEffect, useState } from "react";
 import styles from "./main.module.css";
 import Image from "next/image";
 import { RankModel } from "@/model/rank";
-import CatImage from "@/public/image/cat.svg";
-import DogImage from "@/public/image/dog.svg";
+import CatImage from "@/public/image/cat.png";
+import DogImage from "@/public/image/dog.png";
+import VsImage from "@/public/image/vs.png";
 
 type Props = {
   data: RankModel[];
@@ -29,7 +30,14 @@ export default function HomeMain({ data }: Props) {
           width: dogImageWidth,
         }}
       >
-        <Image src={DogImage} alt="강아지" fill priority sizes="m" />
+        <Image
+          src={DogImage}
+          alt="강아지"
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, 33vw"
+          placeholder="blur"
+        />
       </div>
       <div
         className={styles.imageCat}
@@ -37,10 +45,23 @@ export default function HomeMain({ data }: Props) {
           width: catImageWidth,
         }}
       >
-        <Image src={CatImage} alt="고양이" fill priority sizes="m" />
+        <Image
+          src={CatImage}
+          alt="고양이"
+          fill
+          priority
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
       </div>
       <div className={styles.imageVs}>
-        <Image src={"/image/vs.png"} alt="vs" fill priority sizes="m" />
+        <Image
+          src={VsImage}
+          alt="vs"
+          fill
+          priority
+          sizes="(max-width: 768px) 50vw, 10vw"
+          placeholder="blur"
+        />
       </div>
     </div>
   );

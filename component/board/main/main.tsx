@@ -1,11 +1,11 @@
 import styles from "./main.module.css";
 import Image from "next/image";
-import DogImage from "@/public/image/dog.svg";
-import CatImage from "@/public/image/cat.svg";
+import DogImage from "@/public/image/dog.png";
+import CatImage from "@/public/image/cat.png";
 import { useEffect, useState } from "react";
 import { MessageInfo } from "@/model/message";
-import BubbleLeftImage from "@/public/image/bubble_left.svg";
-import BubbleRightImage from "@/public/image/bubble_right.svg";
+import BubbleLeftImage from "@/public/image/bubble_left.png";
+import BubbleRightImage from "@/public/image/bubble_right.png";
 import { DailyInfo } from "@/model/info";
 
 type GetNewMessageProps = {
@@ -117,7 +117,7 @@ export default function BoardMain() {
     <div className={styles.main}>
       <div className={styles.dog}>
         <div className={styles.dogImage}>
-          <Image src={DogImage} alt="댕댕이" fill priority sizes="l" />
+          <Image src={DogImage} alt="댕댕이" fill priority sizes="50vw" />
         </div>
         {dogShowMessages[0] && (
           <Bubble animal="dog" num={1} message={dogShowMessages[0]} />
@@ -131,7 +131,7 @@ export default function BoardMain() {
       </div>
       <div className={styles.cat}>
         <div className={styles.catImage}>
-          <Image src={CatImage} alt="냥냥이" fill priority sizes="l" />
+          <Image src={CatImage} alt="냥냥이" fill priority sizes="50vw" />
         </div>
         {catShowMessages[0] && (
           <Bubble animal="cat" num={1} message={catShowMessages[0]} />
@@ -188,7 +188,7 @@ function Bubble({ animal, num, message }: BubbleProps) {
         alt="bubble"
         fill
         priority
-        sizes="m"
+        sizes="400px"
       />
       <div className={styles.bubbleText}>{message.message}</div>
     </div>

@@ -1,8 +1,6 @@
 .main {
   width: 100vw;
   height: 100vh;
-  height: -webkit-fill-available;
-  height: fill-available;
   background: linear-gradient(
     109deg,
     #242424 2.13%,

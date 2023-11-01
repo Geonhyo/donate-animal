@@ -2,7 +2,7 @@
 import Image from "next/image";
 import styles from "./pop-up.module.css";
 import { useEffect, useState } from "react";
-import VotePlusImage from "@/public/image/vote_plus.svg";
+import VotePlusImage from "@/public/image/vote_plus.png";
 
 function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms));
@@ -29,7 +29,13 @@ export default function ResultPopUp() {
     on && (
       <div className={styles.background} onClick={onClickBackground}>
         <div className={styles.main}>
-          <Image src={VotePlusImage} alt="투표완료" fill priority sizes="l" />
+          <Image
+            src={VotePlusImage}
+            alt="투표완료"
+            fill
+            priority
+            sizes="100px"
+          />
         </div>
       </div>
     )

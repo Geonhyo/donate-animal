@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./title.module.css";
-import MainTitleImage from "@/public/image/main-title.svg";
+import MainTitleImage from "@/public/image/main_title.png";
 
 export default function HomeTitle() {
   return (
@@ -11,7 +11,7 @@ export default function HomeTitle() {
         title="댕냥이의 기부배틀"
         fill
         priority
-        sizes="l"
+        sizes="400px"
       />
     </div>
   );

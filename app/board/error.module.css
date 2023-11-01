@@ -4,12 +4,17 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  height: -webkit-fill-available;
-  height: fill-available;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 568px) {
+  .main {
+    height: -webkit-fill-available;
+    height: fill-available;
+  }
 }
 
 .message {

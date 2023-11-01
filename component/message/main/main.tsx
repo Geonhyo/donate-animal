@@ -5,10 +5,10 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import Button from "@/component/common/button/button";
 import { PostVoteRequestBody } from "@/app/api/vote/route";
-import DogImage from "@/public/image/dog.svg";
-import CatImage from "@/public/image/cat.svg";
-import BubbleLeftImage from "@/public/image/bubble_left.svg";
-import BubbleRightImage from "@/public/image/bubble_right.svg";
+import DogImage from "@/public/image/dog.png";
+import CatImage from "@/public/image/cat.png";
+import BubbleLeftImage from "@/public/image/bubble_left.png";
+import BubbleRightImage from "@/public/image/bubble_right.png";
 
 export default function MessageMain() {
   const searchParams = useSearchParams();
@@ -67,7 +67,7 @@ export default function MessageMain() {
           alt={animal ?? "dog"}
           fill
           priority
-          sizes="l"
+          sizes="320px"
         />
       </div>
       <div className={styles.textareaBackground}>
@@ -76,7 +76,7 @@ export default function MessageMain() {
           alt=""
           fill
           priority
-          sizes="m"
+          sizes="320px"
         />
         <div className={styles.textBox}>
           <textarea

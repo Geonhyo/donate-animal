@@ -1,10 +1,10 @@
 import { RankModel } from "@/model/rank";
 import styles from "./rank.module.css";
 import Image from "next/image";
-import ResultTitleImage from "@/public/image/result_title.svg";
-import DogImage from "@/public/image/dog.svg";
-import CatImage from "@/public/image/cat.svg";
-import ElseImage from "@/public/image/else.svg";
+import ResultTitleImage from "@/public/image/result_title.png";
+import DogImage from "@/public/image/dog.png";
+import CatImage from "@/public/image/cat.png";
+import ElseImage from "@/public/image/else.png";
 
 type Props = {
   data: RankModel[];
@@ -21,7 +21,7 @@ export default function ResultRank({ data }: Props) {
             alt="응원 현황"
             fill
             priority={false}
-            sizes="m"
+            sizes="50vw"
           />
         </p>
         <ul className={styles.list}>
@@ -69,7 +69,7 @@ function RankItem({ mostVoteNum, rank }: ItemProps) {
   return (
     <div className={styles.item}>
       <div className={styles.itemImage}>
-        <Image src={getSvg()} alt={rank.id} fill priority sizes="m" />
+        <Image src={getSvg()} alt={rank.id} fill priority sizes="48px" />
       </div>
       <div
         style={{ width: `${30 + barWidth}px`, backgroundColor: getBgColor() }}

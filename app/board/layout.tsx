@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./layout.module.css";
-import MainTitleImage from "@/public/image/main-title.svg";
+import MainTitleImage from "@/public/image/main_title.png";
 
 export default async function Layout({
   children,
@@ -15,7 +15,7 @@ export default async function Layout({
           alt="우리가 세상을 지배한다"
           fill
           priority
-          sizes="l"
+          sizes="400px"
         />
       </div>
       {children}

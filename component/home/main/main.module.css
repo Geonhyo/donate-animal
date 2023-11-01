@@ -47,7 +47,7 @@
   width: 208px;
   height: 208px;
   margin: auto;
-  /* transform: translateX(50%) translateY(-50%); */
+  mix-blend-mode: plus-lighter;
   z-index: 15;
   background-color: transparent;
 }

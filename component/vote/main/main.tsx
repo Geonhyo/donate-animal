@@ -1,16 +1,16 @@
 "use client";
 
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import styles from "./main.module.css";
 import { useEffect, useState } from "react";
 import Button from "@/component/common/button/button";
 import Animal from "@/model/animal";
-import DogImage from "@/public/image/dog.svg";
-import DogSelectedImage from "@/public/image/dog_selected.svg";
-import CatImage from "@/public/image/cat.svg";
-import CatSelectedImage from "@/public/image/cat_selected.svg";
-import ElseImage from "@/public/image/else.svg";
-import ElseSelectedImage from "@/public/image/else_selected.svg";
+import DogImage from "@/public/image/dog.png";
+import DogSelectedImage from "@/public/image/dog_selected.png";
+import CatImage from "@/public/image/cat.png";
+import CatSelectedImage from "@/public/image/cat_selected.png";
+import ElseImage from "@/public/image/else.png";
+import ElseSelectedImage from "@/public/image/else_selected.png";
 
 export default function VoteMain() {
   useEffect(() => {
@@ -57,8 +57,8 @@ export default function VoteMain() {
 
 type ItemProps = {
   title: string;
-  defaultSrc: string;
-  selectedSrc: string;
+  defaultSrc: StaticImageData;
+  selectedSrc: StaticImageData;
   label: string;
   onClick: () => void;
   isSelected: boolean;
@@ -84,7 +84,7 @@ function PickItem({
           alt={title}
           fill
           priority
-          sizes="m"
+          sizes="196px"
         />
       </div>
       <p className={styles.itemLabel}>{label}</p>
