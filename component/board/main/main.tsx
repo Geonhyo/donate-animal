@@ -61,10 +61,19 @@ export default function BoardMain() {
     const dogMessages = [] as MessageInfo[];
     const catMessages = [] as MessageInfo[];
 
-    let dogLastCreatedAt = new Date();
-    let catLastCreatedAt = new Date();
+    const now = new Date();
+    const nowUTC = new Date(
+      now.getUTCFullYear(),
+      now.getUTCMonth(),
+      now.getUTCDate(),
+      now.getUTCHours(),
+      now.getUTCMinutes(),
+      now.getUTCSeconds(),
+      now.getUTCMilliseconds()
+    );
 
-    fetching();
+    let dogLastCreatedAt = nowUTC;
+    let catLastCreatedAt = nowUTC;
 
     const polling = setInterval(fetching, 30000);
     return () => clearInterval(polling);

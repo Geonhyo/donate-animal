@@ -19,16 +19,18 @@ const getNewMessages = async ({
   animal,
   lastCreatedAt,
 }: GetNewMessageProps): Promise<MessageInfo[]> => {
+  const lastTime = new Date(lastCreatedAt);
   const snapshot = await getDocs(
     query(
       collection(db, "votes"),
       where("animal", "==", animal),
       where("hasMessage", "==", true),
       orderBy("createdAt", "asc"),
-      startAfter(lastCreatedAt)
+      startAfter(lastTime)
     )
   );
-  if (snapshot.docs.length === 0) return [];
+
+  if (snapshot.empty) return [];
   const result = snapshot.docs.map(
     (e) =>
       ({
