@@ -20,14 +20,14 @@
   );
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --background-rgb: #303030;
     --background-rgb-rev: #fff;
     --foreground-rgb: #fff;
     --foreground-rgb-rev: #303030;
   }
-}
+} */
 
 * {
   box-sizing: border-box;
@@ -81,8 +81,16 @@ h2 {
   font-size: 15px;
 }
 
-@media (prefers-color-scheme: dark) {
+textarea {
+  font-family: Pretendard;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
   }
-}
+} */

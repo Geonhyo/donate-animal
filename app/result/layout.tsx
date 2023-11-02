@@ -8,7 +8,7 @@ const ResultContent = dynamic(
   () => import("@/component/result/content/content")
 );
 const ResultTitle = dynamic(() => import("@/component/result/title/title"));
-const ResultButton = dynamic(() => import("@/component/result/button/button"));
+// const ResultButton = dynamic(() => import("@/component/result/button/button"));
 
 type Props = {
   children: React.ReactNode;
@@ -20,7 +20,7 @@ export default function Layout({ children }: Props) {
       <ResultTitle />
       {children}
       <ResultContent />
-      <ResultButton />
+      {/* <ResultButton /> */}
     </main>
   );
 }

@@ -78,8 +78,11 @@ export default function MessageMain() {
           priority
           sizes="320px"
         />
+        <div className={styles.textareaContainer} />
+
         <div className={styles.textBox}>
           <textarea
+            placeholder="응원의 한 마디를 남겨주세요"
             className={styles.textarea}
             onChange={onChangeHandler}
             value={message}

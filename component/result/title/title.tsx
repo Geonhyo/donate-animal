@@ -1,24 +1,18 @@
 "use client";
 import Image from "next/image";
 import styles from "./title.module.css";
-import BackIcon from "@/public/icon/back.svg";
+import HomeIcon from "@/public/icon/home.svg";
 import Link from "next/link";
 
 export default function ResultTitle() {
   return (
     <div className={styles.main}>
       <div className={styles.header}>
-        <Link href={"/"} replace className={styles.back}>
-          <Image
-            src={BackIcon}
-            alt="뒤로가기"
-            priority={false}
-            fill
-            sizes="s"
-          />
-        </Link>
-        <h1 className={styles.title}>감사합니다!</h1>
         <div className={styles.back} />
+        <h1 className={styles.title}>감사합니다!</h1>
+        <Link href={"/"} replace className={styles.back}>
+          <Image src={HomeIcon} alt="홈으로" priority={false} fill sizes="s" />
+        </Link>
       </div>
       <h2>
         당신의 응원으로

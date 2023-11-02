@@ -41,8 +41,8 @@ export type GetVoteResponseData = {
 };
 
 export async function GET(request: NextRequest) {
-  const searchParams = request.nextUrl.searchParams;
-  const id = searchParams.get("id");
+  // const searchParams = request.nextUrl.searchParams;
+  // const id = searchParams.get("id");
   let voteSnap;
   let voteInfo;
   let catVoteNum;
@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
   let elseVoteNum;
 
   await Promise.all([
-    (voteSnap = id && (await getDoc(doc(db, "votes", id)))),
+    // (voteSnap = id && (await getDoc(doc(db, "votes", id)))),
     (catVoteNum = (
       await getCount(
         query(collection(db, "votes"), where("animal", "==", "cat"))
@@ -74,10 +74,10 @@ export async function GET(request: NextRequest) {
     { id: "else", rank: 0, voteNum: elseVoteNum },
   ] as RankModel[];
 
-  if (voteSnap && voteSnap.exists()) {
-    voteInfo = voteSnap.data();
-    updateDoc(doc(db, "votes", voteSnap.id), { read: true });
-  }
+  // if (voteSnap && voteSnap.exists()) {
+  //   voteInfo = voteSnap.data();
+  //   updateDoc(doc(db, "votes", voteSnap.id), { read: true });
+  // }
 
   rankList.sort((a, b) => b.voteNum - a.voteNum);
   rankList[0].rank = 1;
@@ -85,12 +85,13 @@ export async function GET(request: NextRequest) {
   rankList[2].rank = 3;
 
   const data = {
-    voted: (voteInfo && !voteInfo.read) ?? false,
-    vote: voteInfo && {
-      votedAt: voteInfo.createdAt.toDate(),
-      animal: voteInfo.animal as "dog" | "cat" | "else",
-      message: voteInfo.message ?? undefined,
-    },
+    voted: false,
+    // voted: (voteInfo && !voteInfo.read) ?? false,
+    // vote: voteInfo && {
+    //   votedAt: voteInfo.createdAt.toDate(),
+    //   animal: voteInfo.animal as "dog" | "cat" | "else",
+    //   message: voteInfo.message ?? undefined,
+    // },
     ranks: rankList,
   } as GetVoteResponseData;
 
