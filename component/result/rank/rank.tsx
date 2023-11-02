@@ -44,7 +44,7 @@ type ItemProps = {
 };
 
 function RankItem({ mostVoteNum, rank }: ItemProps) {
-  const barWidth = (170 * rank.voteNum) / mostVoteNum;
+  const barWidth = (170 * rank.voteNum) / (mostVoteNum < 1 ? 1 : mostVoteNum);
   const getSvg = () => {
     switch (rank.id) {
       case "dog":

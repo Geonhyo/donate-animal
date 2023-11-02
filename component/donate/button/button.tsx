@@ -22,7 +22,7 @@ export default function DonateButton() {
         body: JSON.stringify({ animal: animal } as PostVoteRequestBody),
       });
       const id = await response.json();
-      router.replace(`/result?id=${id}`);
+      router.replace(`/result`);
     } else {
       router.replace(`/message?animal=${animal}`);
     }

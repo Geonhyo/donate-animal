@@ -16,8 +16,8 @@ export default function HomeMain({ data }: Props) {
   const [dogImageWidth, setDogImageWidth] = useState("150px");
 
   useEffect(() => {
-    const dogNum = data.find((e) => e.id === "dog")?.voteNum ?? 1;
-    const catNum = data.find((e) => e.id === "cat")?.voteNum ?? 1;
+    const dogNum = (data.find((e) => e.id === "dog")?.voteNum ?? 1) + 1;
+    const catNum = (data.find((e) => e.id === "cat")?.voteNum ?? 1) + 1;
     setCatImageWidth(`calc(120px + 60px * ${catNum} / ${dogNum + catNum})`);
     setDogImageWidth(`calc(120px + 60px * ${dogNum} / ${dogNum + catNum})`);
   }, [data]);
