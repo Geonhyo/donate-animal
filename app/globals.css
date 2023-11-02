@@ -89,6 +89,12 @@ textarea {
   line-height: normal;
 }
 
+div {
+  font-family: Pretendard;
+  font-style: normal;
+  line-height: normal;
+}
+
 /* @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

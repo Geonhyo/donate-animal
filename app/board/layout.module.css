@@ -2,10 +2,10 @@
   width: 100vw;
   height: 100vh;
   background: linear-gradient(
-    109deg,
-    #242424 2.13%,
-    #243834 46.13%,
-    #244d45 97.05%
+    104deg,
+    #000 1.68%,
+    #244d45 97.15%,
+    rgba(36, 77, 69, 0) 97.15%
   );
 }
 
@@ -13,6 +13,6 @@
   top: 70px;
   margin: 0 auto;
   position: relative;
-  width: 215px;
-  height: 169px;
+  width: 366px;
+  height: 288px;
 }

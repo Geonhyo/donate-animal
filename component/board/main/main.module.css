@@ -13,18 +13,18 @@
 .dog,
 .cat {
   position: absolute;
-  top: 20vh;
-  bottom: 20vh;
-  width: 50vw;
+  top: 27vh;
+  bottom: 13vh;
+  width: 60vh;
   height: 60vh;
 }
 
 .dog {
-  left: 48px;
+  left: 24px;
 }
 
 .cat {
-  right: 48px;
+  right: 24px;
 }
 
 .dogImage,
@@ -32,17 +32,17 @@
   position: relative;
   top: 50%;
   left: 50%;
-  width: 60%;
+  width: 80%;
   aspect-ratio: 1;
   z-index: 2;
 }
 
 .dogImage {
-  transform: rotate(-15deg) translateX(-50%) translateY(-60%);
+  transform: rotate(-7.5deg) translateX(-40%) translateY(-55%);
 }
 
 .catImage {
-  transform: rotate(7.5deg) translateX(-50%) translateY(-40%);
+  transform: rotate(7.5deg) translateX(-60%) translateY(-40%);
 }
 
 .dogBubble1,
@@ -52,45 +52,57 @@
 .catBubble2,
 .catBubble3 {
   position: absolute;
-  width: 200px;
-  height: 100px;
+  width: 220px;
+  height: 101px;
 }
 
 .dogBubble1 {
-  top: 0;
-  left: 20px;
-  z-index: 0;
+  top: 24px;
+  left: 62px;
+  z-index: 1;
 }
 .dogBubble2 {
-  right: 0;
-  transform: translateX(-50%);
-  top: 25%;
+  top: 215px;
+  right: -125px;
   z-index: 1;
 }
 .dogBubble3 {
-  bottom: 0;
-  left: 0;
-  z-index: 3;
+  bottom: 35px;
+  left: 51px;
+  z-index: 1;
 }
 
 .catBubble1 {
-  top: 0;
-  right: 20px;
-  z-index: 0;
+  top: 24px;
+  right: 71px;
+  z-index: 1;
 }
 .catBubble2 {
-  left: 0;
-  bottom: 15%;
+  left: -127px;
+  bottom: 172px;
   z-index: 1;
 }
 .catBubble3 {
-  bottom: 0;
-  right: 0;
-  z-index: 3;
+  bottom: 38px;
+  right: 60px;
+  z-index: 1;
+}
+
+.bubbleContainer {
+  position: absolute;
+  top: 8px;
+  bottom: 18px;
+  left: 8px;
+  right: 8px;
+  background: #fdfdfd;
+  mix-blend-mode: soft-light;
 }
 
 .bubbleText {
   position: absolute;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--foreground-rgb);
   top: 16px;
   left: 16px;
   width: calc(100% - 32px);
@@ -114,6 +126,6 @@
 
 .dailyInfoText {
   color: var(--foreground-rgb-rev);
-  font-size: 20px;
+  font-size: 40px;
   font-weight: 900;
 }

@@ -61,8 +61,8 @@ export default function BoardMain() {
     const dogMessages = [] as MessageInfo[];
     const catMessages = [] as MessageInfo[];
 
-    let dogLastCreatedAt = new Date(2023, 9, 30);
-    let catLastCreatedAt = new Date(2023, 9, 30);
+    let dogLastCreatedAt = new Date();
+    let catLastCreatedAt = new Date();
 
     fetching();
 
@@ -113,6 +113,17 @@ export default function BoardMain() {
     }
   }, []);
 
+  const onDeleteBubble = (animal: "cat" | "dog", num: number) => {
+    if (animal === "cat") {
+      setCatShowMessages((prev) => prev.splice(num - 1, 1));
+      return;
+    }
+    if (animal === "dog") {
+      setDogShowMessages((prev) => prev.splice(num - 1, 1));
+      return;
+    }
+  };
+
   return (
     <div className={styles.main}>
       <div className={styles.dog}>
@@ -120,13 +131,28 @@ export default function BoardMain() {
           <Image src={DogImage} alt="댕댕이" fill priority sizes="50vw" />
         </div>
         {dogShowMessages[0] && (
-          <Bubble animal="dog" num={1} message={dogShowMessages[0]} />
+          <Bubble
+            onDeleteBubble={() => onDeleteBubble("dog", 1)}
+            animal="dog"
+            num={1}
+            message={dogShowMessages[0]}
+          />
         )}
         {dogShowMessages[1] && (
-          <Bubble animal="dog" num={2} message={dogShowMessages[1]} />
+          <Bubble
+            onDeleteBubble={() => onDeleteBubble("dog", 2)}
+            animal="dog"
+            num={2}
+            message={dogShowMessages[1]}
+          />
         )}
         {dogShowMessages[2] && (
-          <Bubble animal="dog" num={3} message={dogShowMessages[2]} />
+          <Bubble
+            onDeleteBubble={() => onDeleteBubble("dog", 3)}
+            animal="dog"
+            num={3}
+            message={dogShowMessages[2]}
+          />
         )}
       </div>
       <div className={styles.cat}>
@@ -134,13 +160,28 @@ export default function BoardMain() {
           <Image src={CatImage} alt="냥냥이" fill priority sizes="50vw" />
         </div>
         {catShowMessages[0] && (
-          <Bubble animal="cat" num={1} message={catShowMessages[0]} />
+          <Bubble
+            onDeleteBubble={() => onDeleteBubble("cat", 1)}
+            animal="cat"
+            num={1}
+            message={catShowMessages[0]}
+          />
         )}
         {catShowMessages[1] && (
-          <Bubble animal="cat" num={2} message={catShowMessages[1]} />
+          <Bubble
+            onDeleteBubble={() => onDeleteBubble("cat", 2)}
+            animal="cat"
+            num={2}
+            message={catShowMessages[1]}
+          />
         )}
         {catShowMessages[2] && (
-          <Bubble animal="cat" num={3} message={catShowMessages[2]} />
+          <Bubble
+            onDeleteBubble={() => onDeleteBubble("cat", 3)}
+            animal="cat"
+            num={3}
+            message={catShowMessages[2]}
+          />
         )}
       </div>
       <div className={styles.dailyInfo}>
@@ -156,9 +197,10 @@ type BubbleProps = {
   animal: "dog" | "cat";
   num: 1 | 2 | 3;
   message: MessageInfo;
+  onDeleteBubble: () => void;
 };
 
-function Bubble({ animal, num, message }: BubbleProps) {
+function Bubble({ animal, num, message, onDeleteBubble }: BubbleProps) {
   const getBubbleStyle = () => {
     switch (animal) {
       case "dog":
@@ -181,8 +223,14 @@ function Bubble({ animal, num, message }: BubbleProps) {
         }
     }
   };
+
+  const onClickBubble = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    onDeleteBubble();
+  };
+
   return (
-    <div className={getBubbleStyle()}>
+    <div className={getBubbleStyle()} onClick={onClickBubble}>
       <Image
         src={animal === "dog" ? BubbleLeftImage : BubbleRightImage}
         alt="bubble"
@@ -190,6 +238,7 @@ function Bubble({ animal, num, message }: BubbleProps) {
         priority
         sizes="400px"
       />
+      <div className={styles.bubbleContainer} />
       <div className={styles.bubbleText}>{message.message}</div>
     </div>
   );
