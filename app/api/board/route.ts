@@ -23,6 +23,7 @@ const getNewMessages = async ({
     query(
       collection(db, "votes"),
       where("animal", "==", animal),
+      where("hasMessage", "==", true),
       orderBy("createdAt", "asc"),
       startAfter(lastCreatedAt)
     )
@@ -35,8 +36,7 @@ const getNewMessages = async ({
         createdAt: e.data().createdAt.toDate(),
       } as MessageInfo)
   );
-  const validResult = result.filter((e) => e.message !== "");
-  return validResult;
+  return result;
 };
 
 export async function GET(request: NextRequest) {

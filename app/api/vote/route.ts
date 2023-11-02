@@ -22,6 +22,7 @@ export async function POST(request: NextRequest) {
   const props = (await request.json()) as PostVoteRequestBody;
   const snapshot = await addDoc(collection(db, "votes"), {
     ...props,
+    hasMessage: props.message !== undefined,
     read: false,
     createdAt: serverTimestamp(),
   });
