@@ -1,12 +1,21 @@
-.main {
-  width: 100vw;
-  height: 100vh;
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 120vw;
+  height: 120vh;
   background: linear-gradient(
     104deg,
     #000 1.68%,
     #244d45 97.15%,
     rgba(36, 77, 69, 0) 97.15%
   );
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
 }
 
 .mainTitle {

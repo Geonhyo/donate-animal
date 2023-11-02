@@ -9,6 +9,7 @@ export default async function Layout({
 }) {
   return (
     <main className={styles.main}>
+      <div className={styles.background} />
       <div className={styles.mainTitle}>
         <Image
           src={MainTitleImage}

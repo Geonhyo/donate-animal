@@ -32,8 +32,9 @@ export default function DonateButton() {
       <div className={styles.description}>
         <h3 className={styles.descriptionTitle}>반드시 확인해 주세요!</h3>
         <p className={styles.descriptionContent}>
-          • 개인 프로젝트로 기부금 영수증 발급이 어렵습니다.
-          <br />• 투표완료 버튼을 누르기 전에 결제를 완료해주세요.
+          1. 개인 프로젝트로 기부금 영수증 발급이 어렵습니다.
+          <br />
+          2. 다음으로 넘어가기 전에 기부를 진행해 주세요.
         </p>
       </div>
       <Button

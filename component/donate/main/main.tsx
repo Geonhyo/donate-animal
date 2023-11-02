@@ -22,14 +22,14 @@ export default function DonateMain() {
         <p className={styles.linkDescription}>카카오 페이 바로가기</p>
         <p className={styles.linkContent}>
           버튼을 눌러 카카오 페이로 이동한 뒤<br />
-          기부금을 송금해주세요.
+          기부금을 송금해 주세요.
         </p>
       </div>
       <div className={styles.accountMain}>
         <p className={styles.accountNumber}>카카오뱅크 3333-20-8054264</p>
         <p className={styles.accountContent}>
           카카오 페이 송금이 불가한 경우
-          <br />위 계좌번호로 직접 송금해주세요.
+          <br />위 계좌번호로 직접 송금해 주세요.
         </p>
       </div>
     </div>
