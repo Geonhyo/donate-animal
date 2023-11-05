@@ -1,3 +1,5 @@
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard-dynamic-subset.css");
+
 :root {
   --background-rgb: #fff;
   --background-rgb-rev: #303030;
@@ -30,6 +32,7 @@
 } */
 
 * {
+  font-family: Pretendard;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -65,7 +68,6 @@ p,
 span,
 h1,
 h2 {
-  font-family: var(--font-pretendard);
   text-align: center;
   font-style: normal;
   font-weight: 500;

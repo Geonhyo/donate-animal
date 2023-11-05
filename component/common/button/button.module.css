@@ -3,6 +3,7 @@
 .white {
   width: 280px;
   height: 40px;
+  flex-shrink: 0;
   max-width: calc(100vw - 20px);
   display: flex;
   flex-direction: row;
