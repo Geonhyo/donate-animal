@@ -34,15 +34,16 @@ export default function DonateButton() {
         <p className={styles.descriptionContent}>
           1. 개인 프로젝트로 기부금 영수증 발급이 어렵습니다.
           <br />
-          2. 다음으로 넘어가기 전에 기부를 진행해 주세요.
+          2. {isElse ? "응원을 완료하기" : "다음으로 넘어가기"} 전에 기부를
+          진행해 주세요.
         </p>
       </div>
       <Button
         className={styles.button}
         onClick={onsubmitHandler}
-        title={isElse ? "투표 완료하기" : "다음으로"}
+        title={isElse ? "응원 완료하기" : "다음으로"}
       >
-        {isElse ? "투표 완료하기" : "다음으로"}
+        {isElse ? "응원 완료하기" : "다음으로"}
       </Button>
     </div>
   );

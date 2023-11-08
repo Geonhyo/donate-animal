@@ -29,7 +29,7 @@ export default async function Page() {
     <main className={styles.main}>
       <HomeTitle />
       <HomeMain data={data} />
-      <HomeButton />
+      <HomeButton data={data[0]} />
     </main>
   );
 }

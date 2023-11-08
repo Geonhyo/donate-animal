@@ -95,10 +95,10 @@ export default function MessageMain() {
           title="응원 건너뛰기"
           style="ghost"
         >
-          건너뛰고 바로 투표 완료하기
+          건너뛰고 바로 응원 완료하기
         </Button>
         <Button onClick={onSubmitMessage} title="응원하기" disabled={!message}>
-          응원과 함께 투표 완료하기
+          응원 완료하기
         </Button>
       </div>
     </>
